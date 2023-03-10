@@ -322,13 +322,15 @@ public class VoiceModule extends ReactContextBaseJavaModule implements Recogniti
     WritableArray arr = Arguments.createArray();
 
     ArrayList<String> matches = results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
-    for (String result : matches) {
-      arr.pushString(result);
-    }
+    if (matches != nulll && !matches.isEmpty()) {
+      for (String result : matches) {
+        arr.pushString(result);
+      }
 
-    WritableMap event = Arguments.createMap();
-    event.putArray("value", arr);
-    sendEvent("onSpeechPartialResults", event);
+      WritableMap event = Arguments.createMap();
+      event.putArray("value", arr);
+      sendEvent("onSpeechPartialResults", event);
+    }
     Log.d("ASR", "onPartialResults()");
   }
 
@@ -345,13 +347,15 @@ public class VoiceModule extends ReactContextBaseJavaModule implements Recogniti
     WritableArray arr = Arguments.createArray();
 
     ArrayList<String> matches = results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
-    for (String result : matches) {
-      arr.pushString(result);
-    }
+    if (matches != nulll && !matches.isEmpty()) {
+      for (String result : matches) {
+        arr.pushString(result);
+      }
 
-    WritableMap event = Arguments.createMap();
-    event.putArray("value", arr);
-    sendEvent("onSpeechResults", event);
+      WritableMap event = Arguments.createMap();
+      event.putArray("value", arr);
+      sendEvent("onSpeechResults", event);
+    }
     Log.d("ASR", "onResults()");
   }
 

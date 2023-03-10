@@ -322,7 +322,7 @@ public class VoiceModule extends ReactContextBaseJavaModule implements Recogniti
     WritableArray arr = Arguments.createArray();
 
     ArrayList<String> matches = results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
-    if (matches != nulll && !matches.isEmpty()) {
+    if (matches != null && !matches.isEmpty()) {
       for (String result : matches) {
         arr.pushString(result);
       }
@@ -347,7 +347,7 @@ public class VoiceModule extends ReactContextBaseJavaModule implements Recogniti
     WritableArray arr = Arguments.createArray();
 
     ArrayList<String> matches = results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
-    if (matches != nulll && !matches.isEmpty()) {
+    if (matches != null && !matches.isEmpty()) {
       for (String result : matches) {
         arr.pushString(result);
       }

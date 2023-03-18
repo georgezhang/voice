@@ -119,6 +119,10 @@ public class VoiceModule extends ReactContextBaseJavaModule implements Recogniti
           intent.putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_POSSIBLY_COMPLETE_SILENCE_LENGTH_MILLIS, extras.intValue());
           break;
         }
+        case "DICTATION_MODE": {
+          intent.putExtra(android.speech.extra.DICTATION_MODE, true);
+          break;
+        }
       }
     }
 
